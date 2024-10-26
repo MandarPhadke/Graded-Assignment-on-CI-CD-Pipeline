@@ -11,4 +11,4 @@ def test_homepage(client):
     """Test the home route to ensure it returns the correct template and content"""
     response = client.get('/')
     assert response.status_code == 200
-    assert b"Welcome to the Flask App!" in response.data  # Ensure the HTML content is correct
+    assert b"Have a good day! This is jenkins app" in response.data  # Ensure the HTML content is correct
