@@ -1,7 +1,19 @@
 pipeline {
     agent any
-    
+
+     environment{
+
+        EC2_USER = 'ubuntu'
+
+        EC_HOST = '44.242.245.101'
+
+        SSH_KEY_ID = 'MandarDevOps'
+
+    }
     stages {
+        stage('clone from github'){
+        git branch: 'main',  url: 'https://github.com/MandarPhadke/Graded-Assignment-on-CI-CD-Pipeline.git'
+        }
         stage('Build') {
             steps {
                 sh 'pip install -r requirements.txt'
