@@ -12,8 +12,9 @@ pipeline {
     }
     stages {
         stage('clone from github'){
-        git branch: 'main',  url: 'https://github.com/MandarPhadke/Graded-Assignment-on-CI-CD-Pipeline.git'
+            git branch: 'main',  url: 'https://github.com/MandarPhadke/Graded-Assignment-on-CI-CD-Pipeline.git'
         }
+        
         stage('Build') {
             steps {
                 sh 'pip install -r requirements.txt'
